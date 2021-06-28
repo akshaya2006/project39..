@@ -92,12 +92,12 @@ function draw() {
   text("Score: "+ score, width/5, height/10);
   text("HI: "+ localStorage[0], width/20, height/10);
   
-  camera.position.x = displayWidth/2;
-  camera.position.y = trex.y;
-  
   if (gameState===PLAY){
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
+    
+    camera.position.x = displayWidth/2;
+    camera.position.y = trex.y;
   
     if((touches.length > 0 || keyDown("SPACE")) && trex.y  >= height-180) {
       jump.play( )
